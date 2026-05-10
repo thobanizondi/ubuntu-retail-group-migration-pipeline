@@ -1,0 +1,32 @@
+2026-05-10 14:17:58,208 [INFO] ============================================================
+2026-05-10 14:17:58,208 [INFO] Bronze Ingestion Started
+2026-05-10 14:17:58,208 [INFO] Batch ID  : 02e1c77c-e7a8-44e3-ba93-04a74c79b1f6
+2026-05-10 14:17:58,209 [INFO] Start time: 2026-05-10T12:17:58.208222+00:00
+2026-05-10 14:17:58,209 [INFO] DB path   : db\urg_migration.duckdb
+2026-05-10 14:17:58,210 [INFO] ============================================================
+2026-05-10 14:17:58,231 [INFO] Loading customers_legacy_large.csv ...
+2026-05-10 14:17:58,369 [INFO]   Loaded 5,000 rows -> bronze_customers
+2026-05-10 14:17:58,370 [INFO] Loading orders_legacy_large.csv ...
+2026-05-10 14:17:58,413 [INFO]   Loaded 5,000 rows -> bronze_orders
+2026-05-10 14:17:58,414 [INFO] Loading transactions_legacy_large.csv ...
+2026-05-10 14:17:58,455 [INFO]   Loaded 5,000 rows -> bronze_transactions
+2026-05-10 14:17:58,456 [INFO] Loading products_legacy_large.csv ...
+2026-05-10 14:17:58,479 [INFO]   Loaded 1,000 rows -> bronze_products
+2026-05-10 14:17:58,480 [INFO] 
+2026-05-10 14:17:58,480 [INFO] Row Count Reconciliation
+2026-05-10 14:17:58,480 [INFO] --------------------------------------------------
+2026-05-10 14:17:58,481 [INFO]   bronze_customers          expected=5,000  loaded=5,000  [OK]
+2026-05-10 14:17:58,482 [INFO]   bronze_orders             expected=5,000  loaded=5,000  [OK]
+2026-05-10 14:17:58,482 [INFO]   bronze_transactions       expected=5,000  loaded=5,000  [OK]
+2026-05-10 14:17:58,482 [INFO]   bronze_products           expected=1,000  loaded=1,000  [OK]
+2026-05-10 14:17:58,483 [INFO] --------------------------------------------------
+2026-05-10 14:17:58,483 [INFO] All counts match.
+2026-05-10 14:17:58,483 [INFO] 
+2026-05-10 14:17:58,483 [INFO] Column Inventory
+2026-05-10 14:17:59,820 [INFO]   bronze_customers: ['customer_id', 'full_name', 'email', 'phone_number', 'signup_date', 'status', 'ingested_at', 'source_file', 'batch_id']
+2026-05-10 14:17:59,822 [INFO]   bronze_orders: ['order_id', 'customer_id', 'order_date', 'total_amount', 'status', 'channel', 'ingested_at', 'source_file', 'batch_id']
+2026-05-10 14:17:59,824 [INFO]   bronze_transactions: ['transaction_id', 'order_id', 'payment_method', 'transaction_amount', 'transaction_date', 'success_flag', 'ingested_at', 'source_file', 'batch_id']
+2026-05-10 14:17:59,826 [INFO]   bronze_products: ['product_id', 'product_name', 'category', 'unit_price', 'supplier_code', 'ingested_at', 'source_file', 'batch_id']
+2026-05-10 14:17:59,826 [INFO] 
+BRONZE INGESTION COMPLETE — 1.6s
+2026-05-10 14:17:59,828 [INFO] ============================================================

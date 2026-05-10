@@ -1,0 +1,38 @@
+2026-05-10 14:46:45,596 [INFO] ============================================================
+2026-05-10 14:46:45,596 [INFO] Bad Records Quarantine Started
+2026-05-10 14:46:45,597 [INFO] DB: db\urg_migration.duckdb
+2026-05-10 14:46:45,597 [INFO] ============================================================
+2026-05-10 14:46:45,658 [INFO] bad_records table ready
+2026-05-10 14:46:45,659 [INFO] --- Checking bronze_customers ---
+2026-05-10 14:46:45,707 [INFO]   Null or invalid customer_id: 236
+2026-05-10 14:46:45,776 [INFO]   Unparseable signup_date: 2627
+2026-05-10 14:46:45,794 [INFO]   Unresolvable status: 0
+2026-05-10 14:46:45,794 [INFO]   Total customers quarantined: 2863
+2026-05-10 14:46:45,795 [INFO] --- Checking bronze_orders ---
+2026-05-10 14:46:45,803 [INFO]   Null order_id: 252
+2026-05-10 14:46:45,811 [INFO]   Null customer_id: 483
+2026-05-10 14:46:45,826 [INFO]   Unparseable order_date: 1062
+2026-05-10 14:46:45,830 [INFO]   Unresolvable status: 0
+2026-05-10 14:46:45,830 [INFO]   Total orders quarantined: 1797
+2026-05-10 14:46:45,830 [INFO] --- Checking bronze_transactions ---
+2026-05-10 14:46:45,838 [INFO]   Null transaction_id: 231
+2026-05-10 14:46:45,876 [INFO]   Unparseable transaction_date: 1267
+2026-05-10 14:46:45,896 [INFO]   Unresolvable payment_method: 827
+2026-05-10 14:46:46,006 [INFO]   Unresolvable success_flag: 1281
+2026-05-10 14:46:46,007 [INFO]   Total transactions quarantined: 3606
+2026-05-10 14:46:46,007 [INFO] --- Checking bronze_products ---
+2026-05-10 14:46:46,063 [INFO]   Null product_id: 47
+2026-05-10 14:46:46,172 [INFO]   Unparseable unit_price: 237
+2026-05-10 14:46:46,184 [INFO]   Null category: 203
+2026-05-10 14:46:46,185 [INFO]   Total products quarantined: 487
+2026-05-10 14:46:46,185 [INFO] 
+2026-05-10 14:46:46,186 [INFO] QUARANTINE SUMMARY
+2026-05-10 14:46:46,186 [INFO] ----------------------------------------
+2026-05-10 14:46:46,187 [INFO]   customers      : 2,863 records quarantined
+2026-05-10 14:46:46,188 [INFO]   orders         : 1,797 records quarantined
+2026-05-10 14:46:46,188 [INFO]   transactions   : 3,606 records quarantined
+2026-05-10 14:46:46,189 [INFO]   products       :   487 records quarantined
+2026-05-10 14:46:46,189 [INFO] ----------------------------------------
+2026-05-10 14:46:46,191 [INFO]   TOTAL          : 8,753 records quarantined
+2026-05-10 14:46:46,191 [INFO] BAD RECORDS QUARANTINE COMPLETE
+2026-05-10 14:46:46,192 [INFO] ============================================================

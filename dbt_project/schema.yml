@@ -1,0 +1,62 @@
+version: 2
+
+sources:
+  - name: main
+    tables:
+      - name: bronze_customers
+      - name: bronze_orders
+      - name: bronze_transactions
+      - name: bronze_products
+
+models:
+  - name: silver_customers
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+
+  - name: silver_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_customers')
+              field: customer_id
+
+  - name: silver_transactions
+    columns:
+      - name: transaction_id
+        tests: [unique, not_null]
+      - name: order_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('silver_orders')
+              field: order_id
+
+  - name: silver_products
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+
+  - name: dim_products
+    columns:
+      - name: product_id
+        tests: [unique, not_null]
+
+  - name: fact_orders
+    columns:
+      - name: order_id
+        tests: [unique, not_null]
+
+  - name: fact_transactions
+    columns:
+      - name: transaction_id
+        tests: [unique, not_null]

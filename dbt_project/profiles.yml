@@ -1,0 +1,7 @@
+urg_migration:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "../db/urg_migration.duckdb"
+      threads: 4
