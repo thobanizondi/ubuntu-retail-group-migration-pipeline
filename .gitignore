@@ -1,0 +1,10 @@
+venv/
+db/
+logs/
+dbt_project/target/
+dbt_project/.user.yml
+__pycache__/
+*.pyc
+.env
+data/landing/
+.docker/
