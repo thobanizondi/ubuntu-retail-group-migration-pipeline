@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  pipeline:
+    build: .
+    container_name: urg_migration_pipeline
+    volumes:
+      - ./data/landing:/app/data/landing
+      - ./db:/app/db
+      - ./logs:/app/logs
+      - ./docs:/app/docs
+    environment:
+      - PYTHONUNBUFFERED=1
