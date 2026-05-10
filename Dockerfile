@@ -10,4 +10,4 @@ COPY . .
 
 RUN mkdir -p data/landing db logs docs
 
-CMD ["python", "pipeline.py"]
+CMD ["python", "data_pipeline.py"]
