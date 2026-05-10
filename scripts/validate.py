@@ -153,6 +153,8 @@ def run_validation():
         print("  Some checks FAILED. Review output above.")
     print()
 
+    return results
+
 
 if __name__ == "__main__":
     run_validation()
